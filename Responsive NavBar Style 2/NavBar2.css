@@ -1,0 +1,133 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "poppins",sans-serif;
+}
+body{
+    min-height: 100vh;
+    background: url(https://images.pexels.com/photos/85773/pexels-photo-85773.jpeg?auto=compress&cs=tinysrgb&w=400);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.header{
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 10%;   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.header::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: red;
+    top: 0;
+    left: 0;
+    background-color:rgba(153, 149, 149, 0.384);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+
+}
+.header::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background:linear-gradient(90deg,transparent,rgb(190, 189, 189),transparent);
+    top: 0;
+    left: -100%;
+    transition: .5s;
+   
+    
+}
+.header:hover:after{
+    left: 100%;
+  
+}
+ .logo {
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+
+}
+.navbar a{
+    font-size:20px ;
+    text-decoration: none;
+    color:white;
+    font-weight: 500;
+    margin: 20px;
+    
+}
+#check{
+    display: none;
+
+}
+.icons{
+    color: white;
+    right: 5%;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+    display: block;
+}
+
+
+@media(max-width:20000px){
+    .header{
+        padding: 1.3rem,5%;  
+}
+#close-icon{
+    display: none;
+
+}
+
+
+}
+@media(max-width:740px){
+    .icon {
+        display:inline-flex;
+    }
+#close-icon{
+    display: inline-block;
+}
+    
+   .navbar{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(126, 122, 122, 0.527);
+    backdrop-filter: blur(50px);
+    box-shadow: 0 .5rem,1rem grey;
+    overflow: hidden;
+    transition: .3s ease;
+    height: .7rem;
+}
+#check:checked~.navbar{
+    height:17.7rem;
+    
+}
+   .navbar a{
+    display:block;
+    font-size: 20px;
+    margin: 20px;
+    text-align: center;
+    transform: translateY(-50px);
+    opacity: 1;
+    transition: .3s ease;
+    
+   }
+   #check:checked.navbar~ a {
+    transform: translateY(0);
+    transition-delay: calc(.15s*var(--i));
+    
+}
+}
